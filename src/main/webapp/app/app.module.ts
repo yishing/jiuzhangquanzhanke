@@ -2,10 +2,10 @@ import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng2Webstorage, LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import { JhiEventManager } from 'ng-jhipster';
-
 import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
@@ -28,7 +28,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JiuzhangquanzhankeCoreModule,
         JiuzhangquanzhankeHomeModule,
         JiuzhangquanzhankeAccountModule,
-        JiuzhangquanzhankeEntityModule
+        JiuzhangquanzhankeEntityModule,
+        HttpClientModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],

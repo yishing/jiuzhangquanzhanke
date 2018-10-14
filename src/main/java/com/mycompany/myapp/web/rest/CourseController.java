@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import com.mycompany.myapp.domain.Course;
+import com.mycompany.myapp.domain.dto.CourseDto;
 import com.mycompany.myapp.service.CourseService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +21,16 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping(path = "/api/course/findAllCourses", produces = "application/json")
-    public HttpEntity<List<Course>> findAllCourses(){
-        List<Course> allCourses = courseService.findALlCourses();
+    public HttpEntity<List<CourseDto>> findAllCourses(){
+        List<CourseDto> allCourses = courseService.findAllCourses();
 
         return new ResponseEntity<>(allCourses, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/api/course/findAllCoursesDto", produces = "application/json")
+    public HttpEntity<List<CourseDto>> findAllCoursesDto(){
+        List<CourseDto> allCourses = courseService.findAllCoursesDtoFromDB();
+
+        return new ResponseEntity<>(allCourses, HttpStatus.OK);
+    }
 }

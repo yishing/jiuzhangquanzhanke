@@ -27,19 +27,16 @@
             <!--<div>Teacher_ID</div>-->
         <!--</div>-->
 
-        <!--<div *ngFor="let course of courses" style="padding-bottom: 2px">-->
-            <!--<div style="display: flex; width: 100%; height: 40px; justify-content: space-between; border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">-->
-                <!--<div style="padding-left: 5px">{{course.courseName}}</div>-->
-                <!--<div>{{course.courseLocation}}</div>-->
-                <!--<div>{{course.courseContent}}</div>-->
-                <!--<div>{{course.teacherId}}</div>-->
-                <!--<button className = "btn-primary"> Sign </button>-->
-            <!--</div>-->
-        <!--</div>-->
-        <div style="width: 180px; height: 100px; border-top: solid; border-bottom: solid; border-left: solid; border-right: solid"> test </div>
+        <div><span><button (click)="getAllCourses()">显示所有课程</button> <button (click)="clearAllCourses()">清除</button></span></div>
+        <div *ngFor="let course of courses" style="padding-bottom: 2px">
+        <div style="display: flex; width: 100%; height: 40px; justify-content: space-between; border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">
+        <div style="padding-left: 5px">{{course.courseName}}</div>
+        <div>{{course.courseLocation}}</div>
+        <div>{{course.courseContent}}</div>
+        <div>{{course.teacherId}}</div>
+        <button className = "btn-primary"> Sign </button>
+        </div>
+        </div>
 
-        <p>
-            <span>如果你喜欢九章的课程，别忘记加微信哦。</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-        </p>
     </div>
 </div>
